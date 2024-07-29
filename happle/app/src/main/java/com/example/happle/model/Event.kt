@@ -1,3 +1,10 @@
 package com.example.happle.model
 
-data class Event(val title: String, val location: String, val time: String)
+import java.util.Date
+
+data class Event(
+    val title: String,
+    val description: String,
+    val time: String,
+    val date: Date
+)

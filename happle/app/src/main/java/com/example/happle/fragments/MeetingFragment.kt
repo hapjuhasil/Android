@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.R
 import com.example.happle.model.Event
 import com.example.happle.adapters.EventsAdapter
+import java.util.*
 
 class MeetingFragment : Fragment() {
 
@@ -28,7 +29,7 @@ class MeetingFragment : Fragment() {
 
         // 더미 데이터
         val events = listOf(
-            Event("밴드 미팅", "7/15 (월)", "모임")
+            Event("밴드 미팅", "미팅 장소", "14:00", GregorianCalendar(2024, Calendar.JULY, 15).time)
         )
 
         eventsAdapter.submitList(events)

@@ -29,14 +29,14 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
     }
 
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val eventTitle: TextView = itemView.findViewById(R.id.eventTitle)
-        private val eventLocation: TextView = itemView.findViewById(R.id.eventLocation)
-        private val eventTime: TextView = itemView.findViewById(R.id.eventTime)
+        private val title: TextView = itemView.findViewById(R.id.eventTitle)
+        private val description: TextView = itemView.findViewById(R.id.eventDescription)
+        private val time: TextView = itemView.findViewById(R.id.eventTime)
 
         fun bind(event: Event) {
-            eventTitle.text = event.title
-            eventLocation.text = event.location
-            eventTime.text = event.time
+            title.text = event.title
+            description.text = event.description
+            time.text = event.time
         }
     }
 }

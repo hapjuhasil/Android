@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.R
 import com.example.happle.model.Event
 import com.example.happle.adapters.EventsAdapter
+import java.util.*
 
 class AllFragment : Fragment() {
 
@@ -28,10 +29,10 @@ class AllFragment : Fragment() {
 
         // 더미 데이터
         val events = listOf(
-            Event("홍대 001 공연", "7/14 (일)", "공연"),
-            Event("공연 전 마지막 연습", "7/14 (일)", "연습"),
-            Event("공연 하루 전!!", "7/13 (토)", "연습"),
-            Event("공연 이틀 전 연습 영상", "7/12 (금)", "연습")
+            Event("홍대 001 공연", "공연 장소", "18:00", GregorianCalendar(2024, Calendar.JULY, 14).time),
+            Event("공연 전 마지막 연습", "연습 장소", "17:00", GregorianCalendar(2024, Calendar.JULY, 14).time),
+            Event("공연 하루 전!!", "연습 장소", "16:00", GregorianCalendar(2024, Calendar.JULY, 13).time),
+            Event("공연 이틀 전 연습 영상", "연습 장소", "15:00", GregorianCalendar(2024, Calendar.JULY, 12).time)
         )
 
         eventsAdapter.submitList(events)
