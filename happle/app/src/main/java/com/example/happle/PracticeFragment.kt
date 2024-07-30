@@ -22,10 +22,6 @@ class PracticeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_practice, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
-        eventsAdapter = EventsAdapter()
-
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = eventsAdapter
 
         // 더미 데이터
         val events = listOf(
@@ -34,7 +30,11 @@ class PracticeFragment : Fragment() {
             Event("공연 이틀 전 연습 영상", "연습 장소", "16:00", GregorianCalendar(2024, Calendar.JULY, 12).time)
         )
 
-        eventsAdapter.submitList(events)
+        // 이벤트 리스트를 어댑터에 전달
+        eventsAdapter = EventsAdapter(events)
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = eventsAdapter
 
         return view
     }

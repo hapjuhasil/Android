@@ -8,35 +8,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.R
 import com.example.happle.model.Event
 
-class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
+class EventsAdapter(private val eventList: List<Event>) : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
 
-    private var events: List<Event> = listOf()
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val title: TextView = itemView.findViewById(R.id.event_title)
+        val location: TextView = itemView.findViewById(R.id.event_location)
+        val time: TextView = itemView.findViewById(R.id.event_time)
+    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_event, parent, false)
-        return EventViewHolder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        holder.bind(events[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val event = eventList[position]
+        holder.title.text = event.title
+        holder.location.text = event.description
+        holder.time.text = event.time
     }
 
-    override fun getItemCount(): Int = events.size
-
-    fun submitList(events: List<Event>) {
-        this.events = events
-        notifyDataSetChanged()
-    }
-
-    class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val title: TextView = itemView.findViewById(R.id.eventTitle)
-        private val description: TextView = itemView.findViewById(R.id.eventDescription)
-        private val time: TextView = itemView.findViewById(R.id.eventTime)
-
-        fun bind(event: Event) {
-            title.text = event.title
-            description.text = event.description
-            time.text = event.time
-        }
-    }
+    override fun getItemCount(): Int = eventList.size
 }

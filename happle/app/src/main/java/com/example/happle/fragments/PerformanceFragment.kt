@@ -25,20 +25,19 @@ class PerformanceFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_performance, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
-        eventsAdapter = EventsAdapter()
-
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = eventsAdapter
 
         // 더미 데이터
         val events = listOf(
             Event("홍대 001 공연", "공연 장소", "18:00", GregorianCalendar(2024, Calendar.JULY, 14).time)
         )
 
-        eventsAdapter.submitList(events)
+        // 어댑터에 이벤트 리스트 전달
+        eventsAdapter = EventsAdapter(events)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = eventsAdapter
 
         // 버튼 클릭 리스너 설정
-        val searchButton: Button = view.findViewById(R.id.searchButton) // 버튼 ID 확인 필요
+        val searchButton: Button = view.findViewById(R.id.searchButton)
         searchButton.setOnClickListener {
             val intent = Intent(requireContext(), SearchListActivity::class.java)
             startActivity(intent)
