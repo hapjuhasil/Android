@@ -1,13 +1,16 @@
 package com.example.happle.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.R
+import com.example.happle.SearchListActivity
 import com.example.happle.model.Event
 import com.example.happle.adapters.EventsAdapter
 import java.util.*
@@ -33,6 +36,13 @@ class PerformanceFragment : Fragment() {
         )
 
         eventsAdapter.submitList(events)
+
+        // 버튼 클릭 리스너 설정
+        val searchButton: Button = view.findViewById(R.id.searchButton) // 버튼 ID 확인 필요
+        searchButton.setOnClickListener {
+            val intent = Intent(requireContext(), SearchListActivity::class.java)
+            startActivity(intent)
+        }
 
         return view
     }

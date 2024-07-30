@@ -1,5 +1,6 @@
 package com.example.happle
 
+import android.widget.Button
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,12 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val searchButton = findViewById<Button>(R.id.searchButton)
+        searchButton.setOnClickListener {
+            val intent = Intent(this, SearchListActivity::class.java)
+            startActivity(intent)
+        }
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
