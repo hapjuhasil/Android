@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.happle.model.Band
 import com.example.happle.R
+import com.example.happle.model.Band
 
 class BandRankingAdapter(private val bandList: List<Band>) : RecyclerView.Adapter<BandRankingAdapter.BandViewHolder>() {
 
@@ -18,10 +18,10 @@ class BandRankingAdapter(private val bandList: List<Band>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: BandViewHolder, position: Int) {
         val band = bandList[position]
-        holder.rankNumber.text = (position + 1).toString()
+        holder.bandRank.text = (position + 1).toString()
         holder.bandName.text = band.name
         holder.universityName.text = band.description
-        holder.starRating.text = band.rating.toString()
+        holder.bandScore.text = band.rating.toString()
         holder.ratingCount.text = band.location
         holder.bandImage.setImageResource(band.imageResId)
     }
@@ -29,10 +29,10 @@ class BandRankingAdapter(private val bandList: List<Band>) : RecyclerView.Adapte
     override fun getItemCount() = bandList.size
 
     inner class BandViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val rankNumber: TextView = itemView.findViewById(R.id.rankNumber)
+        val bandRank: TextView = itemView.findViewById(R.id.bandRank)
         val bandName: TextView = itemView.findViewById(R.id.bandName)
         val universityName: TextView = itemView.findViewById(R.id.universityName)
-        val starRating: TextView = itemView.findViewById(R.id.starRating)
+        val bandScore: TextView = itemView.findViewById(R.id.bandScore)
         val ratingCount: TextView = itemView.findViewById(R.id.ratingCount)
         val bandImage: ImageView = itemView.findViewById(R.id.bandImage)
     }

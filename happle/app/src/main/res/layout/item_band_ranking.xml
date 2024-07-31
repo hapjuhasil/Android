@@ -1,71 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:padding="8dp">
 
+    <!-- 순위 표시 -->
     <TextView
-        android:id="@+id/rankNumber"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="@drawable/rounded_corner"
-        android:gravity="center"
+        android:id="@+id/bandRank"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:text="1"
-        android:textSize="14sp"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <ImageView
-        android:id="@+id/bandImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/sample_band_image"
-        app:layout_constraintStart_toEndOf="@id/rankNumber"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:scaleType="centerCrop" />
-
-    <TextView
-        android:id="@+id/bandName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="밴드 이름"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/bandImage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:fontFamily="@font/pretendardregular"
+        android:gravity="center"
+        android:background="@drawable/rank_background"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_vertical" />
 
-    <TextView
-        android:id="@+id/universityName"
+    <!-- 밴드 이미지 -->
+    <ImageView
+        android:id="@+id/bandImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/img_summit"
+        android:contentDescription="밴드 이미지"
+        android:scaleType="centerCrop" />
+
+    <!-- 밴드 정보 -->
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="대학교"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/bandImage"
-        app:layout_constraintTop_toBottomOf="@id/bandName"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp">
 
+        <TextView
+            android:id="@+id/bandName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="밴드 이름"
+            android:fontFamily="@font/pretendardregular"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/universityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대학교 이름"
+            android:fontFamily="@font/pretendardregular"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/ratingCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1K"
+            android:fontFamily="@font/pretendardregular"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!-- 밴드 점수 -->
     <TextView
-        android:id="@+id/starRating"
+        android:id="@+id/bandScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4.62"
+        android:text="1K"
+        android:fontFamily="@font/pretendardregular"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/bandImage"
-        app:layout_constraintTop_toBottomOf="@id/universityName" />
-
-    <TextView
-        android:id="@+id/ratingCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5,671"
-        android:textSize="14sp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintStart_toEndOf="@id/starRating"
-        app:layout_constraintTop_toBottomOf="@id/universityName" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_star"
+        android:drawablePadding="4dp"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>

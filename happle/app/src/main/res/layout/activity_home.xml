@@ -54,10 +54,10 @@
                 android:id="@+id/userNameAndRecommendationText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="띵이님 맞춤 합플 추천해드려요 😻"
+                android:text="세빈님 맞춤 합플 추천해드려요 😻"
                 android:textSize="21sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="#212121"
                 android:fontFamily="@font/pretendardbold"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp" />
@@ -100,7 +100,7 @@
                     android:fontFamily="@font/pretendardbold"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="@color/purple_80"
+                    android:textColor="#212121"
                     android:layout_weight="1" />
 
                 <!-- 플러스 버튼 -->
@@ -204,6 +204,19 @@
                     </LinearLayout>
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <!-- 인기 밴드 목록 -->
+            <TextView
+                android:id="@+id/popularBandsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="인기있는 아마추어 밴드 순위 보여드려요 🥇"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/pretendardbold"/>
 
             <!-- 인기 밴드 목록을 위한 RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
