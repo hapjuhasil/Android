@@ -1,4 +1,4 @@
-package com.example.happle.fragments
+package com.example.happle.fragments.my_happle
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

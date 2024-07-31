@@ -3,6 +3,10 @@ package com.example.happle
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.happle.fragments.*
+import com.example.happle.fragments.my_happle.AllFragment
+import com.example.happle.fragments.my_happle.ChallengeFragment
+import com.example.happle.fragments.my_happle.MeetingFragment
+import com.example.happle.fragments.my_happle.PerformanceFragment
 
 class PracticePagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int = 5

@@ -8,4 +8,8 @@
     <color name="sub">#B0BEC5</color>
     <color name="selectionColor">#FF4081</color>
     <color name="todayColor">#3F51B5</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorVisitedTabIndicator">#FFBB86FC</color>
 </resources>
