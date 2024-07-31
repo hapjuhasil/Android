@@ -92,7 +92,7 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.navigation_my_happle -> {
                     // 마이합플 액티비티로 이동
-                    val intent = Intent(this, MyHappleActivity::class.java)
+                    val intent = Intent(this, MyBandsActivity::class.java)
                     startActivity(intent)
                     true
                 }

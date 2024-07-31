@@ -2,52 +2,56 @@ package com.example.happle
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.happle.adapters.BandAdapter
+import com.example.happle.model.Band
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MyHappleActivity : AppCompatActivity() {
+class MyBandsActivity : AppCompatActivity() {
+
+    private lateinit var bandAdapter: BandAdapter
+    private lateinit var bandListRecyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_happle)
+        setContentView(R.layout.activity_my_bands)
 
         // 툴바 설정
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false) // 기본 제목 비활성화
+        supportActionBar?.setDisplayShowTitleEnabled(true)
 
-        // 뒤로가기 버튼 설정
-        val backButton: ImageView = findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            onBackPressed()
-        }
-
-        // 공유 버튼 설정 (옵션)
-        val shareButton: ImageView = findViewById(R.id.shareButton)
-        shareButton.setOnClickListener {
-            // 공유 버튼 클릭 시 동작
-        }
-
-        // 멤버 신청 버튼 설정
-        val applyButton: Button = findViewById(R.id.applyButton)
-        applyButton.setOnClickListener {
-            // 멤버 신청하기 버튼 클릭 시 동작
-        }
-
-        // 밴드 이미지 클릭 시 동작 설정
-        val navigateToPracticeList: ImageView = findViewById(R.id.bandImage)
-        navigateToPracticeList.setOnClickListener {
-            val intent = Intent(this, BandPracticeListActivity::class.java)
+        // 추가 버튼 설정
+        val addBandButton: ImageView = findViewById(R.id.addBandButton)
+        addBandButton.setOnClickListener {
+            val intent = Intent(this, SearchListActivity::class.java)
             startActivity(intent)
         }
 
+        // 밴드 리스트 설정
+        bandListRecyclerView = findViewById(R.id.bandListRecyclerView)
+        bandListRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        // 샘플 데이터
+        val bands = listOf(
+            Band(id = 1, name = "SUMMIT", description = "설명 1", imageResId = R.drawable.img_summit, rating = 4.5, location = "서울"),
+            Band(id = 2, name = "밴드 2", description = "설명 2", imageResId = R.drawable.img_summit, rating = 4.0, location = "부산")
+        )
+
+        // 어댑터 설정
+        bandAdapter = BandAdapter(bands) { band ->
+            val intent = Intent(this, MyHappleActivity::class.java)
+            intent.putExtra("bandId", band.id)
+            startActivity(intent)
+        }
+
+        bandListRecyclerView.adapter = bandAdapter
+
         // BottomNavigationView 설정
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
-        // 현재 선택된 아이템을 "마이합플"로 설정
         bottomNavigationView.selectedItemId = R.id.navigation_my_happle
 
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -63,8 +67,6 @@ class MyHappleActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_my_happle -> {
-                    val intent = Intent(this, MyBandsActivity::class.java)
-                    startActivity(intent)
                     true
                 }
                 R.id.navigation_board -> {

@@ -58,7 +58,7 @@ class CalendarActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_my_happle -> {
-                    val intent = Intent(this, MyHappleActivity::class.java)
+                    val intent = Intent(this, MyBandsActivity::class.java)
                     startActivity(intent)
                     true
                 }
