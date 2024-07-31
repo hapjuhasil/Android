@@ -19,8 +19,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val searchButton = findViewById<Button>(R.id.searchButton)
-        searchButton.setOnClickListener {
+        val addButton = findViewById<ImageButton>(R.id.addButton)
+        addButton.setOnClickListener {
             val intent = Intent(this, SearchListActivity::class.java)
             startActivity(intent)
         }

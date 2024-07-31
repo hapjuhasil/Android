@@ -13,24 +13,22 @@
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/notificationButton"
-        app:layout_constraintEnd_toStartOf="@id/notificationButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/notificationButton"
         android:layout_marginTop="20dp"
         tools:ignore="ContentDescription"/>
 
     <!-- 알림 버튼 -->
     <ImageButton
         android:id="@+id/notificationButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_notification"
         android:contentDescription="알림 보기"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginTop="20dp"
         tools:ignore="ContentDescription" />
 
@@ -39,15 +37,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="띵이님 맞춤 합플 추천해드려요 😻"
-        android:textSize="18sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/pretendardbold"
         app:layout_constraintTop_toBottomOf="@id/logoImageView"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="30dp"
         android:layout_marginStart="16dp" />
-
 
     <!-- 배너를 위한 ViewPager2 -->
     <androidx.viewpager2.widget.ViewPager2
@@ -74,71 +71,140 @@
         app:tabIndicatorColor="@color/purple_100"
         app:tabTextColor="@color/sub"/>
 
+    <!-- 팔로우한 밴드 섹션 -->
     <TextView
-        android:id="@+id/eventTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="어도어 글로벌 오디션"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/bannerIndicator"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="20dp" />
-
-    <TextView
-        android:id="@+id/followingBands"
+        android:id="@+id/followingBandsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="팔로우 한 밴드 보여드려요"
-        android:textSize="15sp"
+        android:fontFamily="@font/pretendardbold"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/eventTitle"
+        android:textColor="@color/purple_80"
+        app:layout_constraintTop_toBottomOf="@id/bannerIndicator"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginStart="20dp" />
 
+    <!-- 플러스 버튼 -->
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="밴드 추가로 팔로우 하기"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/purple_100"
+        app:layout_constraintTop_toTopOf="@id/followingBandsTitle"
+        app:layout_constraintBottom_toBottomOf="@id/followingBandsTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:padding="4dp"/>
+
     <HorizontalScrollView
+        android:id="@+id/followingBandsSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="팔로우한 밴드 목록"
-        app:layout_constraintTop_toBottomOf="@id/followingBands"
+        app:layout_constraintTop_toBottomOf="@id/followingBandsTitle"
         android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sample_band1"
-                android:contentDescription="밴드 1 이미지" />
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/sample_band2"
-                android:contentDescription="밴드 2 이미지" />
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/sample_band3"
-                android:contentDescription="밴드 3 이미지" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/img_summit"
+                    android:contentDescription="밴드 1 이미지"
+                    style="@style/RoundedImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SUMMIT"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="20dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/img_summit"
+                    android:contentDescription="밴드 2 이미지"
+                    style="@style/RoundedImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어울림"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="20dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/img_summit"
+                    android:contentDescription="밴드 3 이미지"
+                    style="@style/RoundedImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="크림슨"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
 
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentRehearsalRoomsRecyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="검색으로 이동"
-        app:layout_constraintTop_toBottomOf="@id/followingBands"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/followingBandsSection"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

@@ -23,4 +23,13 @@
         <item name="android:textColor">#808080</item>
     </style>
 
+    <style name="RoundedImage">
+        <item name="shapeAppearanceOverlay">@style/Circle</item>
+    </style>
+
+    <style name="Circle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>
