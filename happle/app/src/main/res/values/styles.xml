@@ -9,8 +9,8 @@
 
     <!-- BottomNavigationView 스타일 -->
     <style name="BottomNavigationViewStyle" parent="Widget.Design.BottomNavigationView">
-        <item name="itemIconTint">@color/bottom_nav_item_colors</item>
-        <item name="itemTextColor">@color/bottom_nav_item_colors</item>
+        <item name="itemIconTint">@color/bottom_nav_colors</item>
+        <item name="itemTextColor">@color/bottom_nav_colors</item>
     </style>
 
     <style name="CalendarDateTextAppearance">

@@ -7,9 +7,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.happle.adapters.BandRankingAdapter
 import com.example.happle.adapters.ImageSliderAdapter
+import com.example.happle.model.Band
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -25,6 +28,22 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val bandList = listOf(
+            Band(1, "써밋", "숭실대학교 IT대학", R.drawable.img_summit, 4.5, "서울"),
+            com.example.happle.model.Band(
+                2,
+                "쏘마",
+                "건국대학교 중앙동아리",
+                R.drawable.img_summit,
+                4.2,
+                "서울"
+            ),
+            com.example.happle.model.Band(3, "에밀레", "서강대학교 에밀레", R.drawable.img_summit, 4.0, "서울")
+        )
+
+        val bandRecyclerView = findViewById<RecyclerView>(R.id.bandRankingRecyclerView)
+        bandRecyclerView.layoutManager = LinearLayoutManager(this)
+        bandRecyclerView.adapter = BandRankingAdapter(bandList)
         // 알림 버튼 클릭 리스너
         val notificationButton: ImageButton = findViewById(R.id.notificationButton)
         notificationButton.setOnClickListener {
