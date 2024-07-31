@@ -224,8 +224,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_navigation_menu"
+        app:itemIconSize="38dp"
         app:labelVisibilityMode="unlabeled"
-        app:itemIconTint="@color/sub"
-        app:itemTextColor="@color/purple_100" />
+        app:itemIconTint="@null"
+        app:itemTextColor="@null" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

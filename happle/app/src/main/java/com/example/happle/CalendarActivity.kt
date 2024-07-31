@@ -1,5 +1,6 @@
 package com.example.happle
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.CalendarView
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.adapters.EventsAdapter
 import com.example.happle.model.Event
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
 class CalendarActivity : AppCompatActivity() {
@@ -26,6 +28,10 @@ class CalendarActivity : AppCompatActivity() {
 
         calendarView = findViewById(R.id.calendarView)
         recyclerView = findViewById(R.id.recyclerView)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // 현재 선택된 아이템 설정
+        bottomNavigationView.selectedItemId = R.id.navigation_calendar
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -37,6 +43,36 @@ class CalendarActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "No events for selected date", Toast.LENGTH_SHORT).show()
                 recyclerView.adapter = EventsAdapter(emptyList())
+            }
+        }
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_calendar -> {
+                    // 현재 캘린더 화면이므로 아무 작업도 하지 않음
+                    true
+                }
+                R.id.navigation_my_happle -> {
+                    val intent = Intent(this, MyHappleActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_board -> {
+                    val intent = Intent(this, BoardActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
             }
         }
     }

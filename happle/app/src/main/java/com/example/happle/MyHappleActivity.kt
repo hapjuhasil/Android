@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MyHappleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,42 @@ class MyHappleActivity : AppCompatActivity() {
         navigateToPracticeList.setOnClickListener {
             val intent = Intent(this, BandPracticeListActivity::class.java)
             startActivity(intent)
+        }
+
+        // BottomNavigationView 설정
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // 현재 선택된 아이템을 "마이합플"로 설정
+        bottomNavigationView.selectedItemId = R.id.navigation_my_happle
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_calendar -> {
+                    val intent = Intent(this, CalendarActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_my_happle -> {
+                    // 현재 마이합플 화면이므로 아무 작업도 하지 않음
+                    true
+                }
+                R.id.navigation_board -> {
+                    val intent = Intent(this, BoardActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
         }
     }
 }
