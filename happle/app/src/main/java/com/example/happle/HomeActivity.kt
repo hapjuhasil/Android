@@ -2,10 +2,17 @@ package com.example.happle
 
 import android.widget.Button
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.example.happle.adapters.ImageSliderAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +31,32 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, NotificationActivity::class.java)
             startActivity(intent)
         }
+
+        val viewPager = findViewById<ViewPager2>(R.id.bannerViewPager)
+        val tabLayout = findViewById<TabLayout>(R.id.bannerIndicator)
+
+        val images = listOf(R.drawable.sample_image_main, R.drawable.sample_image_main, R.drawable.sample_image_main)
+        val adapter = ImageSliderAdapter(images)
+        viewPager.adapter = adapter
+
+        // ViewPager2에 여백 추가
+        val recyclerView = viewPager.getChildAt(0) as RecyclerView
+        recyclerView.addItemDecoration(object : RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(
+                outRect: Rect,
+                view: View,
+                parent: RecyclerView,
+                state: RecyclerView.State
+            ) {
+                val position = parent.getChildAdapterPosition(view)
+                if (position == RecyclerView.NO_POSITION) return
+
+                val offset = 20 // 간격을 원하는 값으로 설정 (픽셀 단위)
+                outRect.right = offset
+            }
+        })
+
+        TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
