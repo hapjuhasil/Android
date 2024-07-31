@@ -3,6 +3,7 @@ package com.example.happle
 import android.widget.Button
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -14,6 +15,13 @@ class HomeActivity : AppCompatActivity() {
         val searchButton = findViewById<Button>(R.id.searchButton)
         searchButton.setOnClickListener {
             val intent = Intent(this, SearchListActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 알림 버튼 클릭 리스너
+        val notificationButton: ImageButton = findViewById(R.id.notificationButton)
+        notificationButton.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
             startActivity(intent)
         }
 

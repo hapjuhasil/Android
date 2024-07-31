@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".SplashActivity">
+    tools:context=".NotificationActivity">
 
-    <ImageView
-        android:id="@+id/logoImageView"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        android:contentDescription="@string/app_name"
+        android:text="알림 페이지"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- 알림 내용을 표시하는 레이아웃 추가 -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
