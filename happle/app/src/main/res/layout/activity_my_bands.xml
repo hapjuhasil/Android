@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:elevation="4dp"
         app:title="당신의 마이 합플 🎸"
+        android:textStyle="bold"
         android:fontFamily="@font/pretendardbold"
         app:titleTextColor="@color/black">
 

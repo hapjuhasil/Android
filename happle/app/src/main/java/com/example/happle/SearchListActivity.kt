@@ -6,12 +6,12 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.happle.adapters.BandAdapter
+import com.example.happle.adapters.BandListAdapter
 import com.example.happle.model.Band
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SearchListActivity : AppCompatActivity() {
-    private lateinit var bandAdapter: BandAdapter
+    private lateinit var bandListAdapter: BandListAdapter
     private lateinit var bands: List<Band>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,14 +36,14 @@ class SearchListActivity : AppCompatActivity() {
 
         // onBandClick 구현
         val onBandClick: (Band) -> Unit = { band ->
-            // 클릭된 밴드의 상세 정보를 보여주기 위한 코드 작성
             val intent = Intent(this, MyHappleActivity::class.java)
             intent.putExtra("bandId", band.id)
             startActivity(intent)
         }
 
-        bandAdapter = BandAdapter(bands, onBandClick)
-        recyclerView.adapter = bandAdapter
+        // BandListAdapter를 item_band_list.xml을 사용하도록 설정
+        bandListAdapter = BandListAdapter(bands, onBandClick)
+        recyclerView.adapter = bandListAdapter
 
         // SearchView 설정
         val searchView = findViewById<SearchView>(R.id.search_view)
@@ -63,49 +63,48 @@ class SearchListActivity : AppCompatActivity() {
             }
         })
 
-    // BottomNavigationView 설정
-    val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-    bottomNavigationView.selectedItemId = R.id.navigation_my_happle
+        // BottomNavigationView 설정
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.selectedItemId = R.id.navigation_my_happle
 
-    bottomNavigationView.setOnItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.navigation_home -> {
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-                true
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_calendar -> {
+                    val intent = Intent(this, CalendarActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_my_happle -> {
+                    val intent = Intent(this, MyBandsActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_board -> {
+                    val intent = Intent(this, BoardActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
             }
-            R.id.navigation_calendar -> {
-                val intent = Intent(this, CalendarActivity::class.java)
-                startActivity(intent)
-                true
-            }
-            R.id.navigation_my_happle -> {
-                val intent = Intent(this, MyBandsActivity::class.java)
-                startActivity(intent)
-                true
-            }
-            R.id.navigation_board -> {
-                val intent = Intent(this, BoardActivity::class.java)
-                startActivity(intent)
-                true
-            }
-            R.id.navigation_profile -> {
-                val intent = Intent(this, ProfileActivity::class.java)
-                startActivity(intent)
-                true
-            }
-            else -> false
         }
     }
-}
+
     private fun filterBands(query: String) {
         val filteredBands = if (query.isEmpty()) {
             bands
         } else {
             bands.filter { it.name.contains(query, ignoreCase = true) }
         }
-        bandAdapter.updateBands(filteredBands)
+        bandListAdapter.updateBands(filteredBands)
     }
-
-
 }
