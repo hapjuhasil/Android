@@ -17,7 +17,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:fontFamily="@font/pretendardbold">
+        android:fontFamily="@font/pretendardbold"
+        app:navigationIcon="@drawable/ic_back">
 
         <!-- Custom Title TextView -->
         <TextView

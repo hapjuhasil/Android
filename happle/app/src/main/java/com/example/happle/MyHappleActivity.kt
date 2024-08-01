@@ -1,5 +1,6 @@
 package com.example.happle
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
@@ -16,6 +17,13 @@ class MyHappleActivity : AppCompatActivity() {
         // 툴바 설정
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        // 뒤로가기 버튼 클릭 이벤트 처리
+        toolbar.setNavigationOnClickListener {
+            val intent = Intent(this, MyBandsActivity::class.java)
+            startActivity(intent)
+            finish() // 현재 액티비티를 종료하여 뒤로가기가 아니라 실제 이동으로 보이게 함
+        }
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // ViewPager2와 TabLayout 설정
