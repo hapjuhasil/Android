@@ -29,7 +29,7 @@ class MyHappleActivity : AppCompatActivity() {
                 MyHappleFragment(),
                 ScheduleFragment(),
                 MeetingFragment(),
-                PerformanceFragment()
+                FeedFragment()
             )
         )
         viewPager.adapter = adapter
