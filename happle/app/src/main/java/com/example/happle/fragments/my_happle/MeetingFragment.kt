@@ -1,21 +1,19 @@
 package com.example.happle.fragments.my_happle
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.R
-import com.example.happle.model.Event
-import com.example.happle.adapters.EventsAdapter
-import java.util.*
+import com.example.happle.adapters.ShowAdapter
+import com.example.happle.CustomDividerItemDecoration
 
 class MeetingFragment : Fragment() {
 
-    private lateinit var eventsAdapter: EventsAdapter
-
+    private lateinit var eventsAdapter: ShowAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,17 +21,26 @@ class MeetingFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_meeting, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
 
-        // 더미 데이터
         val events = listOf(
-            Event("밴드 미팅", "미팅 장소", "14:00", GregorianCalendar(2024, Calendar.JULY, 15).time)
+            Show(R.drawable.img_show_01, "공연", "홍대 001 공연", "7/14 (일)"),
+            Show(R.drawable.img_show_02, "연습", "공연 전 마지막 연습", "7/14 (일)"),
+            Show(R.drawable.img_show_03, "연습", "공연 하루 전!!", "7/13 (토)"),
+            Show(R.drawable.img_show_04, "연습", "공연 이틀 전 연습 영상", "7/12 (금)")
         )
 
-        // 이벤트 리스트를 어댑터에 전달
-        eventsAdapter = EventsAdapter(events)
+        eventsAdapter = ShowAdapter(events)
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = eventsAdapter
-
+        recyclerView.addItemDecoration(CustomDividerItemDecoration(requireContext()))
         return view
     }
+
 }
+
+data class Show(
+    val imgResId: Int,
+    val tag: String,
+    val title: String,
+    val date: String
+)
