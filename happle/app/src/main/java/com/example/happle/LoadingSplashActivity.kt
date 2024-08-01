@@ -15,7 +15,7 @@ class LoadingSplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             // 스플래시 화면이 끝나면 MainActivity로 이동
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, ResultActivity::class.java))
             finish() // 스플래시 화면이 끝나면 종료하여 뒤로 가기 버튼으로 돌아올 수 없도록 함
         }, SPLASH_DURATION)
     }
