@@ -42,7 +42,7 @@ class BoardActivity : AppCompatActivity() {
 
         // BottomNavigationView 설정
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigationView.selectedItemId = R.id.navigation_profile
+        bottomNavigationView.selectedItemId = R.id.navigation_board
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
