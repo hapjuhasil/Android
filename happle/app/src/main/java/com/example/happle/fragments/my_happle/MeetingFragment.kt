@@ -1,5 +1,6 @@
 package com.example.happle.fragments.my_happle
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.happle.R
 import com.example.happle.adapters.ShowAdapter
 import com.example.happle.CustomDividerItemDecoration
+import com.example.happle.UploadActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MeetingFragment : Fragment() {
 
@@ -20,6 +23,7 @@ class MeetingFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_meeting, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        val fab: FloatingActionButton = view.findViewById(R.id.fab)
 
         val events = listOf(
             Show(R.drawable.img_show_01, "공연", "홍대 001 공연", "7/14 (일)"),
@@ -33,6 +37,13 @@ class MeetingFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = eventsAdapter
         recyclerView.addItemDecoration(CustomDividerItemDecoration(requireContext()))
+
+        // FloatingActionButton 클릭 이벤트 설정
+        fab.setOnClickListener {
+            val intent = Intent(requireContext(), UploadActivity::class.java)
+            startActivity(intent)
+        }
+
         return view
     }
 

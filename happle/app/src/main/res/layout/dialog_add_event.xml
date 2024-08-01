@@ -39,7 +39,7 @@
             android:id="@+id/eventTypeInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="이벤트 종류" />
+            android:hint="이벤트 장소" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
