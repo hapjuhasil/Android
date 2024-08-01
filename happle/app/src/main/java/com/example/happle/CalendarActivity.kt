@@ -17,9 +17,11 @@ class CalendarActivity : AppCompatActivity() {
     private lateinit var calendarView: CalendarView
     private lateinit var recyclerView: RecyclerView
     private val events = listOf(
-        Event("공연 1", "홍대", "18:00", Calendar.getInstance().apply { set(2024, 6, 14) }.time), // 2024년 7월 14일
-        Event("공연 2", "강남", "20:00", Calendar.getInstance().apply { set(2024, 6, 15) }.time), // 2024년 7월 15일
-        Event("공연 3", "신촌", "19:00", Calendar.getInstance().apply { set(2024, 6, 16) }.time)  // 2024년 7월 16일
+        Event("홍대 001 공연", "공연", "2024-07-14", GregorianCalendar(2024, Calendar.JULY, 14).time),
+        Event("공연 전 마지막 연습", "연습", "2024-07-14", GregorianCalendar(2024, Calendar.JULY, 14).time),
+        Event("공연 하루 전!!", "연습", "2024-07-13", GregorianCalendar(2024, Calendar.JULY, 13).time),
+        Event("공연 이틀 전 연습 영상", "연습", "2024-07-12", GregorianCalendar(2024, Calendar.JULY, 12).time),
+        Event("소공전발표", "숭실대", "15:00", Calendar.getInstance().apply { set(2024, 7, 2) }.time)  // 2024년 7월 16일
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
