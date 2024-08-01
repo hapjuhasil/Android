@@ -29,7 +29,8 @@
                 android:layout_height="wrap_content"
                 android:text="유저 이름"
                 android:textStyle="bold"
-                android:textSize="16sp"/>
+                android:textSize="16sp"
+                android:fontFamily="@font/pretendardbold"/>
 
             <TextView
                 android:id="@+id/postDate"
@@ -37,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:text="8개월 전"
                 android:textSize="12sp"
-                android:textColor="@android:color/darker_gray"/>
+                android:textColor="@android:color/darker_gray"
+                android:fontFamily="@font/pretendardbold"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -47,7 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="게시글 내용"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        android:fontFamily="@font/pretendardbold"/>
 
     <TextView
         android:id="@+id/readMore"
@@ -56,5 +59,6 @@
         android:text="...자세히 보기"
         android:textSize="14sp"
         android:textColor="@android:color/holo_blue_light"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/pretendardbold"/>
 </LinearLayout>

@@ -40,31 +40,36 @@
         app:tabTextColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:fontFamily="@font/pretendardbold">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="홈"
-            android:contentDescription="전체 탭" />
+            android:contentDescription="전체 탭"
+            android:fontFamily="@font/pretendardbold"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="스케쥴"
-            android:contentDescription="챌린지 탭" />
+            android:contentDescription="챌린지 탭"
+            android:fontFamily="@font/pretendardbold"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="활동"
-            android:contentDescription="미팅 탭" />
+            android:contentDescription="미팅 탭"
+            android:fontFamily="@font/pretendardbold"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="피드"
-            android:contentDescription="공연 탭" />
+            android:contentDescription="공연 탭"
+            android:fontFamily="@font/pretendardbold"/>
     </com.google.android.material.tabs.TabLayout>
 
     <!-- ViewPager2 -->
