@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -10,13 +10,189 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/fullscreenImage"
+            android:id="@+id/bandImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_summit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/bandDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="숭실대학교 IT대학 밴드 동아리 써밋입니다 :)"
+            android:textSize="20sp"
+            android:fontFamily="@font/pretendardbold"
+            app:layout_constraintTop_toBottomOf="@id/bandImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="4dp" />
+
+        <Button
+            android:id="@+id/followButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="팔로잉 중"
+            android:backgroundTint="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/bandDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="8dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/locationConstarint"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/followButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- 위치 아이콘 -->
+            <ImageView
+                android:id="@+id/locationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pin"
+                android:contentDescription="Location Icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- 텍스트 "장소" -->
+            <TextView
+                android:id="@+id/locationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장소"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pretendardbold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/locationIcon"
+                android:layout_marginStart="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울특별시 동작구"
+            android:textSize="14sp"
+            android:fontFamily="@font/pretendardbold"
+            app:layout_constraintTop_toBottomOf="@id/locationConstarint"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="4dp" />
+
+        <TextView
+            android:id="@+id/memberIntroductionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="멤버를 소개합니다!"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pretendardbold"
+            app:layout_constraintTop_toBottomOf="@id/location"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="16dp" />
+
+        <!-- Members Horizontal ScrollView -->
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="밴드 소개 이미지"
-            android:scaleType="centerCrop"
-            android:src="@drawable/summit_sogae"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memberIntroductionLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="4dp"
+            android:id="@+id/bandMember">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/member1"
+                    android:contentDescription="멤버 1" />
+
+                <!-- More ImageView components for other members -->
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/approvalPendingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="승인 대기 멤버"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pretendardbold"
+            app:layout_constraintTop_toBottomOf="@id/bandMember"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="16dp" />
+
+        <!-- Approval Pending Members Horizontal ScrollView -->
+        <HorizontalScrollView
+            android:id="@+id/horizon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/approvalPendingLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/pending1"
+                    android:contentDescription="승인 대기 멤버 1" />
+
+
+                <!-- More ImageView components for other pending members -->
+            </LinearLayout>
+
+
+
+        </HorizontalScrollView>
+
+        <!-- Map Image -->
+        <ImageView
+            android:id="@+id/mapImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/place"
+            app:layout_constraintTop_toBottomOf="@id/horizon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Apply Button -->
+        <Button
+            android:id="@+id/applyButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="멤버 신청하기"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/mapImage"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
