@@ -30,15 +30,8 @@ class HomeActivity : AppCompatActivity() {
 
         val bandList = listOf(
             Band(1, "써밋", "숭실대학교 IT대학", R.drawable.img_summit, 4.5, "서울"),
-            com.example.happle.model.Band(
-                2,
-                "쏘마",
-                "건국대학교 중앙동아리",
-                R.drawable.img_summit,
-                4.2,
-                "서울"
-            ),
-            com.example.happle.model.Band(3, "에밀레", "서강대학교 에밀레", R.drawable.img_summit, 4.0, "서울")
+            Band(2, "쏘마", "건국대학교 중앙동아리", R.drawable.band_soma, 4.2, "서울"),
+            Band(3, "에밀레", "서강대학교 에밀레", R.drawable.band_emil, 4.0, "서울")
         )
 
         val bandRecyclerView = findViewById<RecyclerView>(R.id.bandRankingRecyclerView)
@@ -54,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
         val viewPager = findViewById<ViewPager2>(R.id.bannerViewPager)
         val tabLayout = findViewById<TabLayout>(R.id.bannerIndicator)
 
-        val images = listOf(R.drawable.sample_image_main, R.drawable.sample_image_main, R.drawable.sample_image_main)
+        val images = listOf(R.drawable.sample_image_main1, R.drawable.sample_image_main, R.drawable.sample_image_main2)
         val adapter = ImageSliderAdapter(images)
         viewPager.adapter = adapter
 
