@@ -10,8 +10,8 @@
     <!-- 로고 이미지뷰 -->
     <ImageView
         android:id="@+id/logoImageView"
-        android:layout_width="190dp"
-        android:layout_height="80dp"
+        android:layout_width="168dp"
+        android:layout_height="64dp"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

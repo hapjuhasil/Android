@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
+            style="@style/RoundedImage"/>
 
         <TextView
             android:id="@+id/bandNameTextView"
@@ -29,6 +29,7 @@
             android:layout_marginTop="8dp"
             android:text="밴드 이름"
             android:textColor="@android:color/black"
+            android:fontFamily="@font/pretendardbold"
             android:textStyle="bold"
             android:textSize="16sp"
             android:gravity="center" />

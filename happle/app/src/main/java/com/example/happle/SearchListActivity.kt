@@ -20,15 +20,15 @@ class SearchListActivity : AppCompatActivity() {
 
         // Band 객체 생성 시 모든 필드 값 제공
         bands = listOf(
-            Band(id = 1, name = "SUMMIT", description = "IT 대학 밴드", imageResId = R.drawable.sample_band1, rating = 4.5, location = "서울"),
-            Band(id = 2, name = "어울림", description = "어울림 밴드", imageResId = R.drawable.sample_band2, rating = 4.0, location = "부산"),
-            Band(id = 3, name = "크림슨", description = "크림슨 밴드", imageResId = R.drawable.sample_band3, rating = 3.8, location = "대구"),
-            Band(id = 4, name = "광야", description = "광야 밴드", imageResId = R.drawable.sample_band4, rating = 4.2, location = "광주"),
-            Band(id = 5, name = "킨젝스", description = "킨젝스 밴드", imageResId = R.drawable.sample_band5, rating = 4.7, location = "인천"),
-            Band(id = 6, name = "소나기", description = "소나기 밴드", imageResId = R.drawable.sample_band6, rating = 4.3, location = "수원"),
-            Band(id = 7, name = "메아리", description = "메아리 밴드", imageResId = R.drawable.sample_band7, rating = 4.4, location = "전주"),
-            Band(id = 8, name = "수선관 그 밴드", description = "수선관 밴드", imageResId = R.drawable.sample_band8, rating = 3.9, location = "대전"),
-            Band(id = 9, name = "블루 드래곤", description = "블루 드래곤 밴드", imageResId = R.drawable.sample_band9, rating = 4.6, location = "울산")
+            Band(id = 1, name = "SUMMIT", description = "IT 대학 밴드", imageResId = R.drawable.img_summit, rating = 4.5, location = "서울"),
+            Band(id = 2, name = "어울림", description = "어울림 밴드", imageResId = R.drawable.band_uwoolim, rating = 4.0, location = "부산"),
+            Band(id = 3, name = "크림슨", description = "크림슨 밴드", imageResId = R.drawable.band_kreamsn, rating = 3.8, location = "대구"),
+            Band(id = 4, name = "광야", description = "광야 밴드", imageResId = R.drawable.band_gwangya, rating = 4.2, location = "광주"),
+            Band(id = 5, name = "킨젝스", description = "킨젝스 밴드", imageResId = R.drawable.band_kin, rating = 4.7, location = "인천"),
+            Band(id = 6, name = "소나기", description = "소나기 밴드", imageResId = R.drawable.band_sonagi, rating = 4.3, location = "수원"),
+            Band(id = 7, name = "메아리", description = "메아리 밴드", imageResId = R.drawable.band_maeari, rating = 4.4, location = "전주"),
+            Band(id = 8, name = "수선관 그 밴드", description = "수선관 밴드", imageResId = R.drawable.band_susungwan, rating = 3.9, location = "대전"),
+            Band(id = 9, name = "블루 드래곤", description = "블루 드래곤 밴드", imageResId = R.drawable.band_blue, rating = 4.6, location = "울산")
         )
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)

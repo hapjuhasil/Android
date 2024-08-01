@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="세빈님"
-                android:textSize="21sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:fontFamily="@font/pretendardbold"
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="맞춤 합플 추천해드려요 😻"
-                android:textSize="21sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/purple_100"
                 android:fontFamily="@font/pretendardbold"
@@ -106,13 +106,13 @@
                 <!-- 팔로우한 밴드 섹션 -->
                 <TextView
                     android:id="@+id/followingBandsTitle"
-                    android:layout_width="65dp"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/pretendardbold"
                     android:text="팔로우 한 밴드"
                     android:textColor="@color/purple_100"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <!-- 팔로우한 밴드 섹션 -->
@@ -126,7 +126,7 @@
                     android:fontFamily="@font/pretendardbold"
                     android:text="보여드려요 🎸"
                     android:textColor="#212121"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <ImageButton
@@ -174,7 +174,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="SUMMIT"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             android:fontFamily="@font/pretendardbold"
                             android:textStyle="bold"
                             android:layout_marginTop="8dp"
@@ -199,7 +199,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="어울림"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/pretendardbold"
                             android:layout_marginTop="8dp"
@@ -225,7 +225,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="크림슨"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             android:textStyle="bold"
                             android:fontFamily="@font/pretendardbold"
                             android:layout_marginTop="8dp"
@@ -240,7 +240,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="인기있는 아마추어"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/purple_100"
                 android:layout_marginTop="16dp"
@@ -252,7 +252,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="밴드 순위 보여드려요 🥇"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:layout_marginTop="4dp"
@@ -264,7 +264,8 @@
                 android:id="@+id/bandRankingRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/pretendardbold"/>
 
         </LinearLayout>
     </ScrollView>

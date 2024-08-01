@@ -15,14 +15,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/pretendardbold"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/notificationTitle"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/pretendardbold"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -31,6 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/tabLayout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/pretendardbold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
