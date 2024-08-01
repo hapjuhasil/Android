@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="16dp">
+
+    <ImageView
+        android:id="@+id/img_show"
+        android:layout_width="76dp"
+        android:layout_height="0dp"
+        android:contentDescription="쇼 이미지"
+        android:src="@drawable/img_show_01"
+        app:layout_constraintDimensionRatio="1f"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_show"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_show"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_show"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="37dp"
+            android:layout_height="24dp"
+            android:background="@drawable/shape_tag"
+            android:text="공연"
+            android:fontFamily="@font/pretendardregular"
+            android:textAlignment="center"
+            android:textColor="@color/purple_100"
+            android:textSize="11sp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/pretendardbold"
+            android:text="홍대 공연"
+            android:textColor="#404040"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tag" />
+
+        <ImageView
+            android:id="@+id/iv_calender"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/ic_calender_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="7/13 (토)"
+            android:textColor="#8E8E8E"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_calender"
+            app:layout_constraintStart_toEndOf="@id/iv_calender"
+            app:layout_constraintTop_toTopOf="@id/iv_calender" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
