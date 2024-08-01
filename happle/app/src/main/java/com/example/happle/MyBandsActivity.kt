@@ -37,8 +37,8 @@ class MyBandsActivity : AppCompatActivity() {
 
         // 샘플 데이터
         val bands = listOf(
-            Band(id = 1, name = "SUMMIT", description = "설명 1", imageResId = R.drawable.img_summit, rating = 4.5, location = "서울"),
-            Band(id = 2, name = "밴드 2", description = "설명 2", imageResId = R.drawable.img_summit, rating = 4.0, location = "부산")
+            Band(id = 1, name = "SUMMIT", description = "숭실대학교 IT 대학 밴드", imageResId = R.drawable.img_summit, rating = 4.5, location = "서울"),
+            Band(id = 2, name = "소나기", description = "소나기 밴드", imageResId = R.drawable.band_sonagi, rating = 4.0, location = "서울")
         )
 
         // 어댑터 설정
