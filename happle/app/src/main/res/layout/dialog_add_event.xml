@@ -15,7 +15,8 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:paddingBottom="16dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:fontFamily="@font/pretendardbold"/>
 
     <!-- 이벤트 이름 입력 -->
     <com.google.android.material.textfield.TextInputLayout
@@ -27,7 +28,8 @@
             android:id="@+id/eventNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="이벤트 이름" />
+            android:hint="이벤트 이름"
+            android:fontFamily="@font/pretendardbold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,7 +41,8 @@
             android:id="@+id/eventTypeInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="이벤트 장소" />
+            android:hint="이벤트 장소"
+            android:fontFamily="@font/pretendardbold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -51,7 +54,8 @@
             android:id="@+id/eventDateInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="이벤트 날짜 (예: 2024-07-14)" />
+            android:hint="이벤트 날짜 (예: 2024-07-14)"
+            android:fontFamily="@font/pretendardbold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- 버튼 레이아웃 -->
@@ -69,7 +73,8 @@
             android:text="취소"
             android:textColor="@color/black"
             android:background="?android:attr/selectableItemBackground"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/pretendardbold"/>
 
         <!-- 저장 버튼 -->
         <Button
@@ -78,6 +83,7 @@
             android:layout_height="wrap_content"
             android:text="저장"
             android:background="@color/purple_100"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:fontFamily="@font/pretendardbold"/>
     </LinearLayout>
 </LinearLayout>

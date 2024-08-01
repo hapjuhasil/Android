@@ -14,7 +14,7 @@
         android:layout_marginStart="20dp"
         android:text="어떤 밴드를 찾으세요?"
         android:fontFamily="@font/pretendardbold"
-        android:textSize="21sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

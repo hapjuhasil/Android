@@ -23,7 +23,7 @@
             android:text="연습 생성하기"
             android:fontFamily="@font/pretendardbold"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
     </androidx.appcompat.widget.Toolbar>
 
     <!-- 커스텀 진행바 -->

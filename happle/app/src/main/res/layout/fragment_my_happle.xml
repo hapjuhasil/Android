@@ -25,7 +25,7 @@
             android:id="@+id/bandDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="숭실대학교 IT대학 밴드 동아리 써밋입니다 :)"
+            android:text="📢 숭실대학교 IT대학 밴드 동아리 써밋입니다 :)"
             android:textSize="21sp"
             android:fontFamily="@font/pretendardbold"
             app:layout_constraintTop_toBottomOf="@id/bandImage"

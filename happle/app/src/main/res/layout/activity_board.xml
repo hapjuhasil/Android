@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="📝 자유게시판"
         android:fontFamily="@font/pretendardbold"
-        android:textSize="21sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:titleTextColor="@android:color/white" />
 

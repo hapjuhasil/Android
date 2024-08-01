@@ -16,7 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="32dp"
-        android:layout_marginStart="32dp"/>
+        android:layout_marginStart="32dp"
+        />
 
 
     <!-- 회원가입 제목 -->
