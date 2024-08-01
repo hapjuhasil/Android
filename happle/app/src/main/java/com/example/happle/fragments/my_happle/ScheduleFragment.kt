@@ -12,7 +12,7 @@ import com.example.happle.model.Event
 import com.example.happle.adapters.EventsAdapter
 import java.util.*
 
-class ChallengeFragment : Fragment() {
+class ScheduleFragment : Fragment() {
 
     private lateinit var eventsAdapter: EventsAdapter
 
@@ -20,12 +20,15 @@ class ChallengeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_challenge, container, false)
+        val view = inflater.inflate(R.layout.fragment_schedule, container, false)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
 
         // 더미 데이터
         val events = listOf(
-            Event("챌린지 이벤트", "챌린지 장소", "14:00", GregorianCalendar(2024, Calendar.JULY, 16).time)
+            Event("홍대 001 공연", "공연", "2024-07-14", GregorianCalendar(2024, Calendar.JULY, 14).time),
+            Event("공연 전 마지막 연습", "연습", "2024-07-14", GregorianCalendar(2024, Calendar.JULY, 14).time),
+            Event("공연 하루 전!!", "연습", "2024-07-13", GregorianCalendar(2024, Calendar.JULY, 13).time),
+            Event("공연 이틀 전 연습 영상", "연습", "2024-07-12", GregorianCalendar(2024, Calendar.JULY, 12).time)
         )
 
         // 이벤트 리스트를 어댑터에 전달

@@ -11,7 +11,7 @@
 
         <ImageView
             android:id="@+id/bandImage"
-            android:layout_width="0dp"
+            android:layout_width="328dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_summit"
@@ -25,12 +25,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="숭실대학교 IT대학 밴드 동아리 써밋입니다 :)"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:fontFamily="@font/pretendardbold"
             app:layout_constraintTop_toBottomOf="@id/bandImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:paddingTop="4dp" />
+            android:paddingTop="10dp" />
 
         <Button
             android:id="@+id/followButton"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/bandDescription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:padding="8dp" />
+            android:padding="15dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/locationConstarint"

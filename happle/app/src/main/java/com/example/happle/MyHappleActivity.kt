@@ -27,7 +27,7 @@ class MyHappleActivity : AppCompatActivity() {
         adapter.setFragments(
             listOf(
                 MyHappleFragment(),
-                ChallengeFragment(),
+                ScheduleFragment(),
                 MeetingFragment(),
                 PerformanceFragment()
             )
@@ -38,7 +38,7 @@ class MyHappleActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "홈"
-                1 -> "공지"
+                1 -> "스케쥴"
                 2 -> "활동"
                 3 -> "피드"
                 else -> ""
