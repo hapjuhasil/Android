@@ -3,6 +3,7 @@ package com.example.happle
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -16,9 +17,16 @@ class UploadActivity : AppCompatActivity() {
         setContentView(R.layout.activity_upload)
 
         val imgUpload: ImageView = findViewById(R.id.img_upload)
+        val btnNext: Button = findViewById(R.id.btn_next) // btn_next 버튼을 찾아서 초기화
 
         imgUpload.setOnClickListener {
             openGallery()
+        }
+
+        btnNext.setOnClickListener {
+            // 다음 페이지로 이동
+            val intent = Intent(this, NextActivity::class.java)
+            startActivity(intent)
         }
     }
 

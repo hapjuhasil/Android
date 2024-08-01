@@ -2,6 +2,7 @@
     <!-- 기존 스타일 리소스들 -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
+
         <item name="colorPrimary">@color/purple_100</item>
         <item name="colorPrimaryDark">@color/purple_100</item>
         <item name="colorAccent">@color/purple_100</item>
@@ -32,4 +33,7 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="CustomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/selector_type_button</item>
+    </style>
 </resources>
