@@ -22,7 +22,7 @@ class MyBandsActivity : AppCompatActivity() {
         // 툴바 설정
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // 추가 버튼 설정
         val addBandButton: ImageView = findViewById(R.id.addBandButton)

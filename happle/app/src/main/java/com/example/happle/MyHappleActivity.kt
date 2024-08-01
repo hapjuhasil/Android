@@ -2,47 +2,51 @@ package com.example.happle
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import androidx.viewpager2.widget.ViewPager2
+import com.example.happle.fragments.my_happle.AllFragment
+import com.example.happle.fragments.my_happle.ChallengeFragment
+import com.example.happle.fragments.my_happle.MeetingFragment
+import com.example.happle.fragments.my_happle.PerformanceFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MyHappleActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_happle)
 
         // 툴바 설정
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false) // 기본 제목 비활성화
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        // 뒤로가기 버튼 설정
-        val backButton: ImageView = findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            onBackPressed()
-        }
+        // ViewPager2와 TabLayout 설정
+        val viewPager = findViewById<ViewPager2>(R.id.viewPager)
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
 
-        // 공유 버튼 설정 (옵션)
-        val shareButton: ImageView = findViewById(R.id.shareButton)
-        shareButton.setOnClickListener {
-            // 공유 버튼 클릭 시 동작
-        }
+        // ViewPager에 어댑터 설정
+        val adapter = ViewPagerAdapter(this)
+        adapter.setFragments(listOf(
+            MyHappleFragment(),
+            ChallengeFragment(),
+            MeetingFragment(),
+            PerformanceFragment()
+        ))
+        viewPager.adapter = adapter
 
-        // 멤버 신청 버튼 설정
-        val applyButton: Button = findViewById(R.id.applyButton)
-        applyButton.setOnClickListener {
-            // 멤버 신청하기 버튼 클릭 시 동작
-        }
-
-        // 밴드 이미지 클릭 시 동작 설정
-        val navigateToPracticeList: ImageView = findViewById(R.id.bandImage)
-        navigateToPracticeList.setOnClickListener {
-            val intent = Intent(this, BandPracticeListActivity::class.java)
-            startActivity(intent)
-        }
+        // TabLayout과 ViewPager를 연결
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "전체"
+                1 -> "챌린지"
+                2 -> "미팅"
+                3 -> "공연"
+                else -> ""
+            }
+        }.attach()
 
         // BottomNavigationView 설정
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)

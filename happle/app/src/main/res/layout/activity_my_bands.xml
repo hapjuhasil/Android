@@ -13,11 +13,20 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp"
-        app:title="당신의 마이 합플 🎸"
-        android:textStyle="bold"
-        android:fontFamily="@font/pretendardbold"
-        app:titleTextColor="@color/black">
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <!-- Custom Title TextView -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이 합플 🎸"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/pretendardbold"
+            android:gravity="center"/>
 
         <ImageView
             android:id="@+id/addBandButton"
