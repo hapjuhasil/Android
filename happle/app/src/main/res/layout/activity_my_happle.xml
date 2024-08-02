@@ -14,23 +14,28 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:elevation="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:fontFamily="@font/pretendardbold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_back">
 
         <!-- Custom Title TextView -->
         <TextView
             android:id="@+id/toolbar_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendardbold"
             android:gravity="center"
             android:text="SUMMIT"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:fontFamily="@font/pretendardbold"/>
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center" />
     </androidx.appcompat.widget.Toolbar>
+
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
